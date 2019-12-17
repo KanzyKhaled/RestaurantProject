@@ -26,10 +26,10 @@ public class HomePage implements ActionListener {
         frame.getContentPane().add(headerPanel);
         headerPanel.setSize(1300,100);
         headerPanel.setLayout(null);
-       headerPanel.setBackground(Color.LIGHT_GRAY);
+       headerPanel.setBackground(new Color (255,153,102));
        
        JLabel headerLabel = new JLabel("Welcome To Homepage!");
-      headerLabel.setBounds(20,26,500,45);
+       headerLabel.setBounds(20,26,500,45);
        headerLabel.setFont(new Font("Serif",Font.BOLD,35));
      
       
@@ -59,7 +59,7 @@ public class HomePage implements ActionListener {
       menuButton.setBounds(850,35,200,39);
       menuButton.setBackground(Color.WHITE);
       menuButton.setFont(new Font("Serif",Font.BOLD,28));
-     
+      menuButton.addActionListener(this);
    
    
    
@@ -69,16 +69,25 @@ public class HomePage implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent event) {
-        if(event.getActionCommand().equals("Login")){
-            LoginScreen frame2 = new LoginScreen();
-           /* frame2.setVisible(true);
-            frame2.setSize(380,580);*/
-            frame2.setBackground(Color.LIGHT_GRAY);
-            frame.pack();
-            
-            
+       
+        if(event.getActionCommand().equals("Menu")){
+            Meals frame2 = new Meals();
+           // frame2.setVisible(true);
+        }else if(event.getActionCommand().equals("Login")){
+            LoginScreen frame3 = new LoginScreen();
+           // frame3.setVisible(true);
+           
+        }    
         }
+        
     }
-}
+ /*  
+   @Override
+     public void actionPerformed(ActionEvent event){
+         if (event.getActionCommand().equals("Menu")){
+             Meals frame3 = new Meals();
+         }
+     }*/
+
     
 
